@@ -1,5 +1,5 @@
 .main {
-   
+   background: url(/Users/rachelheyvaert/Development/code/phase-1/Project1/catPrints.jpeg);
     background-color: rgba(255, 99, 71, 0.5);
     text-align-last: center;
     font-style: open-sans;
@@ -19,6 +19,7 @@ border: 20px;
     align-content: center;
     border-style: hidden;
     background-color: antiquewhite;
+}
 
 .buttons {
     padding: 5px 10px; 
