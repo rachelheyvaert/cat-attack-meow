@@ -1,7 +1,13 @@
 .main {
    background: url(/Users/rachelheyvaert/Development/code/phase-1/Project1/catPrints.jpeg);
     text-align-last: center;
-    font-style: open-sans;
+    font-style: normal;
+
+}
+.puns {
+    background-color: white;
+    font-style: italic;
+
 }
 .introduction {
 background-size: 100%;
@@ -15,6 +21,7 @@ display:inline-block;
     font-family: Roboto;
     text-align: center;
     display: inline-block;
+    padding-bottom: 0%;
 }
 p {
 box-sizing: border-box;
@@ -23,9 +30,10 @@ text-align: center;
 display:inline-block;
 }
 
-ul #specific-facts {
+#fact-photo-container {
     font-size: 20px;
     text-align: center;
+    text-align-last:auto;
     display:inline-block;
     background-color:white;
     border-left: 50%;
