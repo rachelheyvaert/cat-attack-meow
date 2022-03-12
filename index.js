@@ -8,10 +8,13 @@ function fetchCatPictures(){
     fetch('https://api.thecatapi.com/v1/images/search')
     .then(response => response.json())
     .then(pictures => {
+        console.log("pictures", pictures)
         const catFactContainer = document.getElementById('fact-photo-container')
         const photoList = document.getElementById('single-photos')
         photoList.innerHTML += `
-        <img src= "${pictures}">`
+        <img src= ${pictures[0].url}
+        width="200"
+        height="200"/>`
         catFactContainer.append(photoList)
     } )
 }
