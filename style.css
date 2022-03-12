@@ -1,0 +1,25 @@
+.main {
+   
+    background-color: rgba(255, 99, 71, 0.5);
+    text-align-last: center;
+    font-style: open-sans;
+}
+#header {
+    font-size: 60px;
+    font-family: Roboto;
+}
+p {
+box-sizing: border-box;
+background-origin: auto;
+border: 20px;
+}
+
+#fact-photo-container {
+    font-size: 20px;
+    align-content: center;
+}
+
+.buttons {
+    padding: 5px 10px; 
+    font-family: Roboto;
+}
