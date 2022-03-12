@@ -1,8 +1,12 @@
 .main {
    background: url(/Users/rachelheyvaert/Development/code/phase-1/Project1/catPrints.jpeg);
-    background-color: rgba(255, 99, 71, 0.5);
     text-align-last: center;
     font-style: open-sans;
+}
+.introduction {
+box-sizing: content-box;
+border-style: hidden;
+background-color: white;
 }
 #header {
     font-size: 60px;
@@ -18,7 +22,8 @@ border: 20px;
     font-size: 20px;
     align-content: center;
     border-style: hidden;
-    background-color: antiquewhite;
+    background-color:white;
+    border-left: 50%;
 }
 
 .buttons {
