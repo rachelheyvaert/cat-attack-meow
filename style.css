@@ -5,7 +5,6 @@
 }
 .introduction {
 background-size: 100%;
-background-color: white;
 text-align: center;
 font-size: 20px;
 display:inline-block;
@@ -24,7 +23,7 @@ text-align: center;
 display:inline-block;
 }
 
-ul.specific-facts {
+ul #specific-facts {
     font-size: 20px;
     text-align: center;
     display:inline-block;
