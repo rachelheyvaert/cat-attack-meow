@@ -4,9 +4,11 @@
     font-style: open-sans;
 }
 .introduction {
-box-sizing: content-box;
-border-style: hidden;
+background-size: 100%;
 background-color: white;
+text-align: center;
+display:inline-block;
+
 }
 #header {
     font-size: 60px;
@@ -15,13 +17,14 @@ background-color: white;
 p {
 box-sizing: border-box;
 background-origin: auto;
-border: 20px;
+text-align: center;
+display:inline-block;
 }
 
 #fact-photo-container {
     font-size: 20px;
-    align-content: center;
-    border-style: hidden;
+    text-align: center;
+    display:inline-block;
     background-color:white;
     border-left: 50%;
 }
