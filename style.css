@@ -17,7 +17,8 @@ border: 20px;
 #fact-photo-container {
     font-size: 20px;
     align-content: center;
-}
+    border-style: hidden;
+    background-color: antiquewhite;
 
 .buttons {
     padding: 5px 10px; 
