@@ -7,6 +7,9 @@
 .puns {
     background-color: white;
     font-style: italic;
+    border-color: grey;
+    border-style:double;
+    color: rgb(83, 82, 82)
 
 }
 .introduction {
