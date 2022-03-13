@@ -34,7 +34,6 @@ display:inline-block;
     text-align: center;
     text-align-last:auto;
     display:inline-block;
-    background-color:white;
     border-left: 50%;
 }
 
@@ -48,10 +47,17 @@ display:inline-block;
     font-size: 20px;
     text-align: center;
     display:inline-block;
-    background-color:white;
+    padding-top: 1.5%;
 }
 
 img {
     width: 20%;
     height: 20%;
+}
+#factText {
+    background-color: white;
+    text-align: center;
+    display: flex;
+    border: 1%;
+  
 }
