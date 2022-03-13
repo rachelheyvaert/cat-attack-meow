@@ -13,9 +13,7 @@ function fetchCatPictures(){
         const photoList = document.getElementById('single-photos')
         const images = document.getElementById("catPics").setAttribute('src', pictures[0].url)
         photoList.append(images)
-    
-     
-        catFactContainer.append(photoList)
+        catFactContainer.appendChild(photoList)
     } )
 }
 
