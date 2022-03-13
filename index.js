@@ -14,7 +14,8 @@ function fetchCatPictures(){
         photoList.innerHTML += `
         <img src= ${pictures[0].url}
         width="200"
-        height="200"/>`
+        height="200"/>
+        <button id="likeBtn">Love</button>`
         catFactContainer.append(photoList)
     } )
 }
@@ -46,4 +47,13 @@ function handleGetCatFactButton(){
 function clearFactButton(){
     const hissButton = document.getElementById('clear-results')
     hissButton.addEventListener('click', reload, false(e))
+    }
+
+    function handleLikeButton (){
+        const likeBtn = document.getElementById('likeBtn')
+likeBtn.addEventListener('click', (e)=> {
+    // if(likeBtn.textContent = "Love") {
+
+    }
+})
     }
