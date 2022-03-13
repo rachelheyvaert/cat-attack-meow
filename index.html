@@ -11,8 +11,11 @@
     <div class="introduction">
     <h1 id="header">Cat Facts</h1>
     <br>
-    <h3 class="puns">Well, well look what the cat dragged in. What's the matter? Cat got your tongue?</h3>
-        <h3 class="puns">Okay, okay I'll stop with the puns right meow.</h3>
+    <div class="puns">
+        <h3 >Well, well look what the cat dragged in. What's the matter? Cat got your tongue?
+        Okay, okay I'll stop with the puns right meow.</h3>
+    </div>
+    
     </div>
     <div>
         <h4 id="button-instructions">Press the button below to learn a cat fact and let the cat out of the bag.</h4>
@@ -21,8 +24,11 @@
         <button onClick="window.location.reload();" class="buttons" id="clear-results">Hiss!</button>
     </div>
     <div id="fact-photo-container">
+        <button id="likeBtn">Team cats</button>
+        <ul id="single-photos"> </ul>
+        <img id="catPics">
         <ul id="specific-facts"></ul>
-        <ul id="single-photos"></ul>
+        
     </div>
     <script src='index.js'></script>
 </body>
