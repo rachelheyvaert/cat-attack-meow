@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', ()=> {
    handleGetCatFactButton()
    clearFactButton()
+   handleLikeButton()
  })
 
 function fetchCatPictures(){
@@ -46,14 +47,16 @@ function handleGetCatFactButton(){
 
 function clearFactButton(){
     const hissButton = document.getElementById('clear-results')
-    hissButton.addEventListener('click', reload, false(e))
+    hissButton.addEventListener('click', reload, false)
     }
 
     function handleLikeButton (){
         const likeBtn = document.getElementById('likeBtn')
 likeBtn.addEventListener('click', (e)=> {
-    // if(likeBtn.textContent = "Love") {
-
+    if(likeBtn.innerHTML === "Love") {
+        return likeBtn.innerHTML === "Loved"
+    } if(likeBtn.innerHTML !== "Love") {
+        return likeBtn.innerHTML === "Love"
     }
 })
     }
