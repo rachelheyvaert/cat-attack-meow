@@ -45,8 +45,5 @@ function handleGetCatFactButton(){
 
 function clearFactButton(){
     const hissButton = document.getElementById('clear-results')
-    hissButton.addEventListener('click', (e)=>{
-        const catFactContainer = document.getElementById('fact-photo-container')
-       return catFactContainer.innerHTML= ''
-    }) 
-}
+    hissButton.addEventListener('click', reload, false(e))
+    }
