@@ -1,8 +1,8 @@
 
 document.addEventListener('DOMContentLoaded', ()=> {
    handleGetCatFactButton()
-   clearFactButton()
-   handleLikeButton()
+   clearAllButton()
+
  })
 function fetchCatPictures(){
     fetch('https://api.thecatapi.com/v1/images/search')
@@ -24,20 +24,19 @@ function fetchCatPictures(){
     fetch(fetchURL)
         .then(resp => resp.json())
         .then(catFacts => {
+            //This could all be a function-refactor
             const catFactContainer = document.getElementById('fact-container')
             const catFunFactList = document.getElementById('specific-facts')
             catFactContainer.innerHTML += 
             `${catFacts.fact}
-            <style>
-            background-color: white;
-            </style>
-            <br>
             <button class="like_btn">
-            <span id="count">0</span> Like
+            <span id="count">0</span> Likes
             </button>
             `
             catFactContainer.append(catFunFactList)
-               })
+        
+        })
+             
  }
 
 function handleGetCatFactButton(){
@@ -48,19 +47,9 @@ function handleGetCatFactButton(){
     })
 }
 
-function clearFactButton(){
+function clearAllButton(){
     const hissButton = document.getElementById('clear-results')
-    hissButton.addEventListener('click', reload())
-    }
-
-function handleLikeButton(){
-        const likeBtn = document.getElementById('likeBtn');
-    likeBtn.addEventListener('click', ()=> {
-        console.log("hello")
-    if(likeBtn.innerHTML === "Love") {
-        return likeBtn.innerHTML === "Loved"
-    } if(likeBtn.innerHTML !== "Love") {
-        return likeBtn.innerHTML === "Love"
-    }
+    hissButton.addEventListener('click', (e)=>{
+        reload(e)
     })
-    }
+}
