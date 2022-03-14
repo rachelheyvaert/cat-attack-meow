@@ -13,7 +13,7 @@ function fetchCatPictures(){
         const photoList = document.getElementById('single-photos')
         const images = document.getElementById("catPics").setAttribute('src', pictures[0].url)
         photoList.append(images)
-        catFactContainer.appendChild(photoList)
+        catFactContainer.append(photoList)
     } )
 }
 
@@ -27,7 +27,13 @@ function fetchCatPictures(){
             const catFunFactList = document.getElementById('specific-facts')
             catFactContainer.innerHTML += 
             `${catFacts.fact}
+            <style>
+            background-color: white;
+            </style>
             <br>
+            <button class="like_btn">
+            <span id="count">0</span> Like
+            </button>
             `
             catFactContainer.append(catFunFactList)
                })
