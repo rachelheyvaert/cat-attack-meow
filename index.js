@@ -23,24 +23,20 @@ function fetchCatPictures(){
     const fetchURL = 'https://catfact.ninja/fact'
     fetch(fetchURL)
         .then(resp => resp.json())
-        .then(catFacts => {
-            //This could all be a function-refactor
-            const catFactContainer = document.getElementById('fact-container')
-            const catFunFactList = document.getElementById('specific-facts')
-            catFunFactList.innerHTML += 
-            `${catFacts.fact}
-            <button class="like_btn">
-            <span id="count">0</span> Likes
-            </button>
-            <br>
-            `
-            catFactContainer.append(catFunFactList)
-            
+        .then(catFacts => createCatFacts(catFacts))      
         
-        })
+}
              
- }
 
+ function createCatFacts(catFacts){
+    const catFactContainer = document.getElementById('fact-container')
+    const catFunFactList = document.getElementById('specific-facts')
+    catFunFactList.innerHTML = catFacts.fact
+    catFactContainer.append(catFunFactList)
+    }
+
+
+    //Handeling buttons
 function handleGetCatFactButton(){
     const button = document.getElementById("cat-button")
     button.addEventListener('click', (e) => {
