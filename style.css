@@ -54,10 +54,11 @@ img {
     width: 20%;
     height: 20%;
 }
-#factText {
-    background-color: white;
-    text-align: center;
-    display: flex;
-    border: 1%;
-  
+#specific-facts{
+background-color: white;
+text-align: flex;
+font-size: 20px;
+font-family: Roboto;
+border-spacing: 5%;
 }
+

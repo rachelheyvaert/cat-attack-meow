@@ -27,13 +27,15 @@ function fetchCatPictures(){
             //This could all be a function-refactor
             const catFactContainer = document.getElementById('fact-container')
             const catFunFactList = document.getElementById('specific-facts')
-            catFactContainer.innerHTML += 
+            catFunFactList.innerHTML += 
             `${catFacts.fact}
             <button class="like_btn">
             <span id="count">0</span> Likes
             </button>
+            <br>
             `
             catFactContainer.append(catFunFactList)
+            
         
         })
              
