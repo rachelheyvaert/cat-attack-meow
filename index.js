@@ -4,16 +4,17 @@ document.addEventListener('DOMContentLoaded', ()=> {
    clearFactButton()
    handleLikeButton()
  })
-let clicked = false
 function fetchCatPictures(){
     fetch('https://api.thecatapi.com/v1/images/search')
     .then(response => response.json())
     .then(pictures => {
-        const catFactContainer = document.getElementById('fact-photo-container')
+        const catImgContainer = document.getElementById('img-container')
         const photoList = document.getElementById('single-photos')
-        const images = document.getElementById("catPics").setAttribute('src', pictures[0].url)
+        const images = document.getElementById("catPics")
+        images.setAttribute('src', pictures[0].url)
         photoList.append(images)
-        catFactContainer.append(photoList)
+        catImgContainer.append(photoList)
+        
     } )
 }
 
@@ -23,7 +24,7 @@ function fetchCatPictures(){
     fetch(fetchURL)
         .then(resp => resp.json())
         .then(catFacts => {
-            const catFactContainer = document.getElementById('fact-photo-container')
+            const catFactContainer = document.getElementById('fact-container')
             const catFunFactList = document.getElementById('specific-facts')
             catFactContainer.innerHTML += 
             `${catFacts.fact}
