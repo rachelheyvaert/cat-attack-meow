@@ -1,9 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', ()=> {
     handleGetCatFactButton()
-    clearAllButton()
     handleLikeBtn()
- 
   })
  
   
@@ -11,9 +9,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
      fetch('https://api.thecatapi.com/v1/images/search')
      .then(response => response.json())
      .then(pictures => {
-         const catImgContainer = document.getElementById('img_Container');
-         const photoList = document.getElementById('single-photos');
-         const images = document.getElementById("catPics");
+         const catImgContainer = document.getElementById('img_container');
+         const photoList = document.getElementById('single_photos');
+         const images = document.getElementById("cat_pics");
          images.setAttribute('src', pictures[0].url);
          photoList.append(images);
          catImgContainer.append(photoList);
@@ -32,31 +30,34 @@ document.addEventListener('DOMContentLoaded', ()=> {
               
  
   function createCatFacts(catFacts){
-     const catFactContainer = document.getElementById('fact-container');
-     const catFunFactList = document.getElementById('specific-facts');
+     const catFactContainer = document.getElementById('fact_container');
+     const catFunFactList = document.getElementById('specific_facts');
      catFunFactList.innerHTML = catFacts.fact;
      catFactContainer.append(catFunFactList);
      }
  
  
-     //Handeling buttons
+ //Handeling buttons
  function handleGetCatFactButton(){
-     const button = document.getElementById("cat-button");
-     button.addEventListener('click', (e) => {
+     const getFactBtn = document.getElementById("cat_button");
+     getFactBtn.addEventListener('click', (e) => {
      handleCatFactFetch(e);
      fetchCatPictures(e);
      })
  }
  
- function clearAllButton(){
-     const hissButton = document.getElementById('clear-results')
-     hissButton.addEventListener('click', (e)=>{
-         reload(e);
-     })
+
+const hissBtn = document.getElementById('clear_results')
+hissBtn.addEventListener('click', clearAllButton)
+
+ 
+function clearAllButton(e){
+       location.reload(e);
+       
  }
  
  function handleLikeBtn(){
-    const likeBtn = document.getElementById('like_Btn');
+    const likeBtn = document.getElementById('like_btn');
      likeBtn.addEventListener('click', ()=>{
         let likes = document.querySelector('#count');
         num = parseInt(likes.innerText)
