@@ -1,30 +1,30 @@
-//global variables
+
 const catImgContainer = document.getElementById('img_container');
-const photoList = document.getElementById('single_photos');
-const images = document.getElementById("cat_pics");
-const getFactBtn = document.getElementById("cat_button");
+const images = document.querySelector("#cat_pics");
+const meowBtn = document.getElementById("cat_button");
 
 document.addEventListener('DOMContentLoaded', ()=> {
     handleGetCatFactButton();
-    handleLikeBtn();
+    resetLikes();
   })
- 
+
+function resetLikes(){
+    let likes = document.querySelector('#count');
+     return likes.innerText = 0
+}
   
 function fetchCatPictures(){
      fetch('https://api.thecatapi.com/v1/images/search')
      .then(response => response.json())
      .then(pictures => {
         images.setAttribute('src', pictures[0].url);
-         photoList.append(images);
-         catImgContainer.append(photoList);
-         
+         catImgContainer.append(images);    
      })
  }
  
 
 function handleCatFactFetch() {
-     const fetchURL = 'https://catfact.ninja/fact'
-     fetch(fetchURL)
+     fetch('https://catfact.ninja/fact')
          .then(resp => resp.json())
          .then(catFacts => createCatFacts(catFacts))           
  }
@@ -37,48 +37,48 @@ function createCatFacts(catFacts){
      }
  
 
- //Handeling buttons
  function handleGetCatFactButton(){
-     getFactBtn.addEventListener('click', (e) => {
-     handleCatFactFetch(e);
-     fetchCatPictures(e);
-     resetLikes(e);
-     })
- }
-
-//Clearing and reseting page
-const hissBtn = document.getElementById('clear_results')
-hissBtn.addEventListener('click', clearAllButton)
-
- 
-function clearAllButton(e){
-       location.reload(e);
- }
+     meowBtn.addEventListener('click', (e) => {
+        handleCatFactFetch(e);
+        fetchCatPictures(e);
+        resetLikes(e);
+     }
+     )}
 
 
  //Like button
  const likeBtn = document.getElementById('like_btn');
+
+ likeBtn.addEventListener('click', handleLikeBtn);
+
  function handleLikeBtn(){
-     likeBtn.addEventListener('click', ()=>{
         let likes = document.querySelector('#count');
         num = parseInt(likes.innerText)
         num += 1
         return likes.innerText = num
- 
-     })
- }
- function resetLikes(){
-    let likes = document.querySelector('#count');
-     return likes.innerText = 0
-}
+     }
 
-//Adopt & saving info to DOM
+
 const adoptBtn = document.getElementById('save_btn');
-adoptBtn.addEventListener('click', ()=> {
+
+adoptBtn.addEventListener('click', handleAdoptBtn)
+
+function handleAdoptBtn(){
     const savedContainer= document.getElementById("saved_cards");
     const savedFact= catFactContainer.textContent;
-    const savedImg= catImgContainer.images;//not grabbing getting undefined
-    const likeCountCurrent = likeBtn.innerText
-    savedContainer.append(savedFact, savedImg, likeCountCurrent)
+    const likeCountCurrent = likeBtn.innerText;
+    savedContainer.innerHTML += `
+        <img src="${images.src}" />
+        <p>${savedFact}</p>
+        <p>${likeCountCurrent}</p>
+    `
+}
 
-})
+
+const hissBtn = document.getElementById('clear_results');
+
+hissBtn.addEventListener('click', clearAllButton);
+
+function clearAllButton(e){
+       location.reload(e);
+}
