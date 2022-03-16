@@ -5,11 +5,10 @@
 
 }
 .puns {
-    background-color: black;
-    font-style: italic;
-    border-color: grey;
+    background-color: rgb(71, 71, 71);
+    border-color: black;
     border-style:double;
-    color: white;
+    color:white;
 
 }
 .introduction {
@@ -29,21 +28,20 @@ display:inline-block;
 }
 
 
-#fact-photo-container {
-    font-size: 20px;
-    text-align: center;
-    text-align-last:auto;
-    display:inline-block;
-    border-left: 50%;
-}
-
 .buttons {
     padding: 5px 10px; 
     font-family: Roboto;
     font-size: 18px;
-    font-style: oblique;
+  background-color: orange;
+    font-weight: 300;
+    text-align: center;
+    margin:auto;
+    position: flex;
+    display: flex;
+    display:inline-block;
+  
 }
-#button-instructions {
+#button_instructions {
     font-size: 20px;
     text-align: center;
     display:inline-block;
@@ -51,10 +49,11 @@ display:inline-block;
 }
 
 img {
+    border-spacing: 5%;
     width: 20%;
     height: 20%;
 }
-#specific-facts{
+#specific_facts{
 background-color: white;
 text-align: flex;
 font-size: 20px;
@@ -62,3 +61,11 @@ font-family: Roboto;
 border-spacing: 5%;
 }
 
+.save {
+    background-color: black;
+    font-size: 18px;
+    border-color: grey;
+    border-style:hidden;
+    color: white;
+    align-items: center;
+}
