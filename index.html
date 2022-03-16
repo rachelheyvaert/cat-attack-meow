@@ -4,38 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cat Attack</title>
+    <title>Time Meowt</title>
     <link rel='stylesheet' href='style.css'/>
 </head>
 <body class="main">
     <div class="introduction">
-    <h1 id="header">Cat Facts</h1>
+    <h1 id="header">Time Meowt</h1>
     <br>
     <div class="puns">
         <h3 >Well, well look what the cat dragged in. What's the matter? Cat got your tongue?
-        Okay, okay I'll stop with the puns right meow.</h3>
+        </h3>
     </div>
     
     </div>
     <div>
-        <h4 id="button-instructions">Press the button below to learn a cat fact and let the cat out of the bag.</h4>
+        <h4 id="button_instructions">Press the button below to learn a cat fact and let the cat out of the bag.</h4>
        <br>
-        <button class="buttons" id="cat-button">Meow</button>
-        <button onClick="window.location.reload();" class="buttons" id="clear-results">Hiss</button>
-        <br>
-        <button class="buttons" id="like_Btn" onclick="handleLikeBtn">
+        <button class="buttons" id="cat_button">Meow</button>
+        <button class="buttons" id="like_btn">
             <span id="count">0</span> Likes
             </button>
+        <button class="buttons" id="save_btn">Adopt</button>
+        <button onClick="window.location.reload();" class="buttons" id="clear_results">Hiss</button>
     </div>
-    <div class= "img-card" id="img_Container">
-        <ul id="single-photos"> </ul>
-        <img id="catPics">
+
+    <div class= "img_card" id="img_container">
+        <!-- <ul id="single_photos"> </ul> -->
+        <img id="cat_pics">
     
     </div>
-    <div id="fact-container">
-         <ul class="fact_Text" id="specific-facts"></ul>
+    <div id="fact_container">
+         <ul class="fact_text" id="specific_facts"></ul>
      
          <br>
+    </div>
+    <div class="save" id="saved_cards">
+        
+
     </div>
     <script src='index.js' defer></script>
 </body>
