@@ -1,23 +1,17 @@
+document.addEventListener('DOMContentLoaded', () => {
+    handleGetCatFactButton();
+  })
+
+
 
 const catImgContainer = document.getElementById('img_container');
 const images = document.querySelector("#cat_pics");
-const meowBtn = document.getElementById("cat_button");
-
-document.addEventListener('DOMContentLoaded', ()=> {
-    handleGetCatFactButton();
-    resetLikes();
-  })
-
-function resetLikes(){
-    let likes = document.querySelector('#count');
-     return likes.innerText = 0
-}
-  
 function fetchCatPictures(){
      fetch('https://api.thecatapi.com/v1/images/search')
      .then(response => response.json())
      .then(pictures => {
-        images.setAttribute('src', pictures[0].url);
+         console.log(pictures) //Array
+         images.setAttribute('src', pictures[0].url);
          catImgContainer.append(images);    
      })
  }
@@ -26,7 +20,9 @@ function fetchCatPictures(){
 function handleCatFactFetch() {
      fetch('https://catfact.ninja/fact')
          .then(resp => resp.json())
-         .then(catFacts => createCatFacts(catFacts))           
+         .then(catFacts => {
+             console.log(catFacts) //object
+              createCatFacts(catFacts)})           
  }
      
 const catFactContainer = document.getElementById('fact_container');
@@ -35,9 +31,14 @@ function createCatFacts(catFacts){
      catFunFactList.innerHTML = catFacts.fact;
      catFactContainer.append(catFunFactList);
      }
- 
 
- function handleGetCatFactButton(){
+function resetLikes(){
+        let likes = document.querySelector('#count');
+         return likes.innerText = 0
+    }
+ 
+const meowBtn = document.getElementById("cat_button");
+function handleGetCatFactButton(){
      meowBtn.addEventListener('click', (e) => {
         handleCatFactFetch(e);
         fetchCatPictures(e);
@@ -46,14 +47,12 @@ function createCatFacts(catFacts){
      )}
 
 
- //Like button
  const likeBtn = document.getElementById('like_btn');
-
  likeBtn.addEventListener('click', handleLikeBtn);
 
  function handleLikeBtn(){
         let likes = document.querySelector('#count');
-        num = parseInt(likes.innerText)
+        let num = parseInt(likes.innerText)
         num += 1
         return likes.innerText = num
      }
