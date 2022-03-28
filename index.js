@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
-    handleGetCatFactButton();
-  })
+// document.addEventListener('DOMContentLoaded', () => {
+//     handleGetCatFactButton();
+//   })
 
 
 
@@ -10,7 +10,7 @@ function fetchCatPictures(){
      fetch('https://api.thecatapi.com/v1/images/search')
      .then(response => response.json())
      .then(pictures => {
-         console.log(pictures) //Array
+         console.log(pictures) //Array of objects
          images.setAttribute('src', pictures[0].url);
          catImgContainer.append(images);    
      })
@@ -38,13 +38,14 @@ function resetLikes(){
     }
  
 const meowBtn = document.getElementById("cat_button");
-function handleGetCatFactButton(){
-     meowBtn.addEventListener('click', (e) => {
-        handleCatFactFetch(e);
-        fetchCatPictures(e);
-        resetLikes(e);
+// function handleGetCatFactButton(){
+     meowBtn.addEventListener('click', () => {
+        handleCatFactFetch();
+        fetchCatPictures();
+        resetLikes();
      }
-     )}
+     )
+    // }
 
 
  const likeBtn = document.getElementById('like_btn');
@@ -55,7 +56,7 @@ function handleGetCatFactButton(){
         let num = parseInt(likes.innerText)
         num += 1
         return likes.innerText = num
-     }
+         }
 
 
 const adoptBtn = document.getElementById('save_btn');
